@@ -8,10 +8,10 @@ reviews bucket.
 Note that a join must use the ON KEYS clause to specify the actual joining. For those with a SQL background, the query on the right would be written as:
 
 <span style="color: red">
-SELECT p.name, r.* <br>
-FROM product p <br>
-INNER JOIN reviews r <br>
-ON (r.productID == META(product).id) 
+`SELECT p.name, r.* 
+FROM product p 
+INNER JOIN reviews r 
+ON (r.productID == META(product).id) `
 </span>
 <pre id="example">
 SELECT product.name, product.categories, reviews

@@ -196,16 +196,16 @@ func serve(cdir string, tld string, queryhost string) {
 		w.Header().Set("Content-Type", "application/json")
 		w.Write(json)
 	}
-	http.HandleFunc("/tutorial/index.json", getindex)
+	http.HandleFunc("/handsOnN1QL/index.json", getindex)
 
 	url, _ := url.Parse("http://" + queryhost + ":8093")
 	rp := httputil.NewSingleHostReverseProxy(url)
 	http.Handle("/query", rp)
 
 	fs := http.FileServer(http.Dir(tempDir + "/" + tld + "/"))
-	http.Handle("/tutorial/", http.StripPrefix("/tutorial/", fs))
+	http.Handle("/handsOnN1QL/", http.StripPrefix("/handsOnN1QL/", fs))
 
-	http.Handle("/", http.RedirectHandler("/tutorial/index.html#1", 302))
+	http.Handle("/", http.RedirectHandler("/handsOnN1QL/index.html#1", 302))
 
 	clog.Log("Running at http://localhost:8000/")
 	go func() {
