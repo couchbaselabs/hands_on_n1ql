@@ -1,11 +1,12 @@
-## Unnesting data
+## Familiar Functionality
 
-The same query as the previous page, rewritten to UNNEST the categories in each product, 
-instead of using ANY/SATISFIES on the categories of each product.
+N1QL provides functionality that will be very familiar to those with a SQL background. It is possible to select DISTINCT values, use aggregates and GROUP BY and sort using ORDER BY.
 <pre id="example">
-`SELECT product.name, cat, product.unitPrice 
-  FROM product UNNEST product.categories AS cat  
-    WHERE LOWER(cat) in ["golf"] 
-      LIMIT 10 OFFSET 10
+`
+SELECT product.name, cat, product.unitPrice 
+  FROM product 
+   WHERE ANY cat IN product.categories SATISFIES lower(cat) = "golf" END
+    ORDER BY product.unitPrice DESC
+      LIMIT 5
 `
 </pre>
