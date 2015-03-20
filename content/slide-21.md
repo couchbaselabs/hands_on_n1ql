@@ -7,5 +7,5 @@ The example on the right changes the type of the document "baldwin" from
 <pre id="example">
 UPDATE contacts 
   USE KEYS "baldwin" 
-    SET type = "actor" RETURNING contacts.type
+    SET type = "actor" 
 </pre>

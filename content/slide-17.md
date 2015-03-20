@@ -1,6 +1,6 @@
 ## EXERCISE
 
-What category has the highest rating? Only care about products with more than 100 reviews.
+What category has the highest rating of reviews from the year 2014?
 
 <pre id="example">
 SELECT cat, product, reviews
