@@ -10,8 +10,8 @@ A query can also be expressed in the form:
 
 <span style="color: red">
 `
-FROM contacts  <br>
-  SELECT * <br> 
+FROM contacts  
+  SELECT *  
     WHERE fname = "Ian"
 `
 </span>
