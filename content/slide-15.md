@@ -8,4 +8,5 @@ hand inputs collected into an array.
 SELECT product.name, reviews
     FROM product
       NEST reviews ON KEYS product.reviewList
+        LIMIT 5
 </pre>
