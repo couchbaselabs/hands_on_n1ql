@@ -17,4 +17,5 @@ ON (r.productID == META(product).id) `
 SELECT product.name, product.categories, reviews
     FROM product 
       JOIN reviews ON KEYS product.reviewList
+        LIMIT 5
 </pre>
