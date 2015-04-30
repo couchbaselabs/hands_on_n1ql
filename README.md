@@ -1,8 +1,8 @@
-# Extract:
+1) Extract:
 
 tar zxvf data.tar.gz
 
-# Load: (note - the script requires the password of your Couchbase instance)
+2) Load: (note - the load_data.sh script expects the password of your Couchbase instance)
 
 sh load_data.sh password
 
