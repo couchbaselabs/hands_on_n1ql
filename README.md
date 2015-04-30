@@ -1,13 +1,8 @@
-To run the tutorial...
+# Extract:
 
-* Go to http://cbfs-ext.hq.couchbase.com/tuqtng/
-* Download tutorial.zip and extract it, to say ~/tutorial
-* Download server and save it to same directory, ~/tutorial
-* Open two consoles, cd to ~/tutorial in each and run:	
+tar zxvf data.tar.gz
 
-```Shell
-./cbq-engine -couchbase dir:test -pool json
-./tutorial
-```
+# Load: (note - the script requires the password of your Couchbase instance)
 
-* Visit http://localhost:8000 with your browser.
+sh load_data.sh password
+
