@@ -16,5 +16,13 @@ $ sh load_data.sh password
 #### create primary key indexes
 $ sh create_indexes.sh
 
+#### build hands_on_n1ql binary
+$ ./build.sh
+
+#### run hands_on_n1ql binary
+# ./hands_on_n1ql 
+
+#### open localhost:8000
+
 Note: recreate_buckets.sh and load_data.sh require the Couchbase Server's Administrator password
 
