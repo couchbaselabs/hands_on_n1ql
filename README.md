@@ -1,8 +1,14 @@
-1) Extract:
+Requirements:
 
-tar zxvf data.tar.gz
+* Couchbase Server 4.0 installed and running with Data, Index and Query services
 
-2) Load: (note - the load_data.sh script expects the password of your Couchbase instance)
+* PATH environment variable includes path to Couchbase Server 4.0 bin directory
 
-sh load_data.sh password
+Steps:
+
+* tar zxvf data.tar.gz
+
+* sh load_data.sh password
+
+Note: load_data.sh requires the Couchbase Server's Administrator password
 
