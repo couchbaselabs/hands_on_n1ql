@@ -16,5 +16,5 @@ $ sh load_data.sh password
 #### create primary key indexes
 $ sh create_indexes.sh
 
-Note: recreate_buckets.sh and load_data.sh requires the Couchbase Server's Administrator password
+Note: recreate_buckets.sh and load_data.sh require the Couchbase Server's Administrator password
 
