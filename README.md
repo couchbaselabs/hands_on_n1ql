@@ -11,6 +11,7 @@ $ sh recreate_buckets.sh password
 
 #### load the buckets 
 $ tar zxvf data.tar.gz
+
 $ sh load_data.sh password
 
 #### create primary key indexes
@@ -20,7 +21,7 @@ $ sh create_indexes.sh
 $ ./build.sh
 
 #### run hands_on_n1ql binary
-# ./hands_on_n1ql 
+$ ./hands_on_n1ql 
 
 #### open localhost:8000
 
