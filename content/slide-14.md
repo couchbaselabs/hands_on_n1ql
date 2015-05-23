@@ -1,13 +1,12 @@
-## Joins
+# Part 1: Setup, Getting Started and Querying
 
-An example showing the average rating of the top 5 rated products. 
-Note that a JOIN is used to combine the product detail with its corresponding review detail.
+## Select DISTINCT 
+
+The DISTINCT keyword can be used to eliminate duplicates from the output.
+
+Try removing the DISTINCT keyword from the query to see the difference.
 
 <pre id="example">
-SELECT product.name, AVG(reviews.rating) AS avg_rating   
-   FROM reviews 
-     JOIN product ON KEYS reviews.productId 
-      GROUP BY product.name 
-         ORDER BY avg_rating DESC 
-           LIMIT 5
+SELECT DISTINCT state
+  FROM customer
 </pre>

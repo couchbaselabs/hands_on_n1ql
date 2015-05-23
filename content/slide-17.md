@@ -1,10 +1,15 @@
-## EXERCISE
+# Part 1: Setup, Getting Started and Querying
 
-What category has the highest rating of reviews from the year 2014?
+## Ordering results 
+
+Queries can optionally include an ORDER BY clause describing how the results
+should be sorted.
+
+Modify the query to show the product with lowest price first.
 
 <pre id="example">
-SELECT cat, product, reviews
-  FROM product UNNEST product.categories AS cat
-    JOIN reviews ON KEYS product.reviewList
-     LIMIT 5 
+SELECT name, description, unitPrice
+  FROM product 
+    ORDER BY unitPrice DESC
+      LIMIT 10
 </pre>

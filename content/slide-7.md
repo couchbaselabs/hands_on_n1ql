@@ -1,11 +1,17 @@
-## Unnest 
+# Part 1: Setup, Getting Started and Querying
 
-The UNNEST operator joins nested arrays with the parent object.
+## String operators - like 
 
-The example query joins a contact with each of their children. In the results, each contact will appear N times, where N is 
-the number of children the contact has. Contacts with no children will not be shown.
+Who is on Yahoo?
+
+String matching is provided using the LIKE operator.
+
+A % matches 0 or more characters. A _ matches exactly 1 character.
+
+Try changing the query to show who is NOT on Yahoo?
 
 <pre id="example">
-SELECT contacts.email, child 
-   FROM contacts UNNEST contacts.children AS child
+SELECT fname, email
+    FROM contacts 
+        WHERE email LIKE "%@yahoo.com"
 </pre>

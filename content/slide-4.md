@@ -1,21 +1,15 @@
-## Array Expressions
+# Part 1: Setup, Getting Started and Querying
 
-The ANY/EVERY - SATISFIES expression can be applied to an array to filter the data of interest. Try changing ANY to EVERY.
+## Aliasing
 
-N1QL supplies several functions that operate on arrays:
+Both keyspace names and field names can be aliased.
 
-* <b>ARRAY_LENGTH(a)</b> 
-* <b>ARRAY_CONCAT(a, b)</b> 
-* <b>ARRAY_APPEND(a, x)</b> 
-* <b>ARRAY_PREPEND(a, x)</b> 
-* <b>ARRAY_POSITION(a, x)</b> 
-
-Try changing the query to give the number of children of each contact, instead
-of giving all the children with each contact.
+Aliases are useful in certain contexts, such as joining a keyspace with itself or disambiguating field names. 
+We will meet examples of both shortly.
 
 <pre id="example">
-SELECT fname, children 
-  FROM contacts  
-    WHERE ANY child IN contacts.children 
-	    SATISFIES child.age > 10  END
+SELECT c.lname as FamilyName, c.age as Years, 
+        c.email as EmailAddr, c.fname as Name
+  FROM contacts c
+    WHERE c.fname = "Ian" 
 </pre>

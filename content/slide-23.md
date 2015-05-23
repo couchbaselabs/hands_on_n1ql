@@ -1,13 +1,14 @@
-## Metadata
+# Part 1: Setup, Getting Started and Querying
 
-The system namespace contains system metadata. The query on the right will
-provide information about all buckets (or keyspaces, to use N1QL terminology).
+## EXERCISE
 
-* <b>keyspaces</b> Information about all buckets 
-* <b>indexes</b> Information about all indexes
-* <b>namespaces</b> Information about all namespaces
+Find the top 5 rated products.
+
+Use the product and reviews keyspaces.
+
+Only include products with more than 10 reviews.
 
 <pre id="example"> 
-SELECT *
-  FROM system:keyspaces
+SELECT p, r
+  FROM product p JOIN reviews r ON KEYS p.reviewList
 </pre>

@@ -1,13 +1,13 @@
-## EXERCISE 
+# Part 1: Setup, Getting Started and Querying
 
-Find the products with the most reviews. Show products with at least 20 reviews.
+## Putting a LIMIT on things...
 
-Note that the review ids for each product are kept in an array reviewList. 
-The reviews are actually in another bucket called reviews, but for this exercise 
-we not interested in the review detail, just which products have the most reviews. 
+A LIMIT clause can be added to a query to return a limited set of documents.
+
+This can be useful to preview  documents, particularly when given a large document set.
 
 <pre id="example">
-SELECT * 
-  FROM product
-   LIMIT 5
+SELECT purchase_samples
+  FROM purchases AS purchase_samples
+   LIMIT 3
 </pre>

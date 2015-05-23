@@ -1,11 +1,14 @@
-## Nest 
+# Part 1: Setup, Getting Started and Querying
 
-The NEST operator collects the right hand input into an array; we can use 
-array comprehension to select the detail we are interested in.
+## Filtering grouped data with HAVING 
+
+The HAVING clause enables filtering of groups.
+
+The query from the previous slide is filtered to include groups with more than 10 members
+
 <pre id="example">
-SELECT product.name, 
-        ARRAY review.rating FOR review IN reviews END AS ratings
-  FROM product
-    NEST reviews ON KEYS product.reviewList
-        LIMIT 5
+SELECT count(customer) as customers_per_state, state
+  FROM customer 
+    GROUP BY state
+      HAVING COUNT(customer) > 10
 </pre>

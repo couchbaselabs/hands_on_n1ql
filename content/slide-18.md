@@ -1,15 +1,15 @@
-## Exercise - solution
+# Part 1: Setup, Getting Started and Querying
 
-What category has the highest rating of reviews from the year 2014?
+## Querying primary keys
 
+Specific primary keys within a bucket can be queried using the USE KEYS clause.
+
+The query on the right fetches documents from the contacts keyspace with the restriction that the primary key must 
+be in the USE KEYS clause.
 
 <pre id="example">
-SELECT cat, AVG(reviews.rating) as avg_rating, 
-	COUNT(reviews.rating) as num_ratings 
-FROM product UNNEST product.categories AS cat 
-    JOIN reviews ON KEYS product.reviewList  
-WHERE substr(reviews.reviewedAt, 0, 4) = "2014"
-  GROUP BY cat 
-      ORDER BY avg_rating desc
+SELECT fname, email
+  FROM contacts
+    USE KEYS ["dave", "ian"]
 
 </pre>

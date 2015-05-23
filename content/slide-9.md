@@ -1,12 +1,15 @@
-## Familiar Functionality
+# Part 1: Setup, Getting Started and Querying
 
-N1QL provides functionality that will be very familiar to those with a SQL background. It is possible to select DISTINCT values, use aggregates and GROUP BY and sort using ORDER BY.
+## NULL and MISSING values
+
+JSON documents can contain NULL values. In addition, fields present in one document
+may not be present in another. The IS/IS NOT/NULL/MISSING operators lets you test for 
+these values.
+
+Try changine the query to show only contacts that have children.
+
 <pre id="example">
-`
-SELECT product.name, product.unitPrice 
-  FROM product 
-   WHERE ANY cat IN product.categories SATISFIES lower(cat) = "golf" END
-    ORDER BY product.unitPrice DESC
-      LIMIT 5
-`
+SELECT fname, children
+  FROM contacts
+     WHERE children IS NULL
 </pre>

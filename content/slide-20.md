@@ -1,8 +1,15 @@
-## DML 
+# Part 1: Setup, Getting Started and Querying
 
-N1QL provides DELETE, INSERT, UPDATE, and UPSERT statements. These statements allow you to create, delete, and modify the data stored in JSON documents by specifying and executing simple commands.
+## Joins
+
+The product keyspace has a list of the primary keys for its reviews.
+
+This can be used to join a product with review detail. The query on the right shows a specific product joined with all its reviews.
 
 <pre id="example">
-INSERT INTO contacts (KEY, VALUE) 
-  VALUES ("baldwin", {"name":"Alex Baldwin", "type":"contact"})
+
+SELECT p.name, r.rating
+  FROM product p USE KEYS "product320"
+        JOIN reviews r ON KEYS p.reviewList
+
 </pre>

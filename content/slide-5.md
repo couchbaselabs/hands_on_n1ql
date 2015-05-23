@@ -1,11 +1,15 @@
-## Array Comprehension
+# Part 1: Setup, Getting Started and Querying
 
-Array comprehensions enable building of arrays from existing one.
+## Simple arithmetic and comparison
 
-The query on the right builds a new array containing only children names for all contacts that have children. 
+We can perform basic arithmetic and comparison in expressions.
+
+Try using different arithmetic and comparison operators.
+
+For example, N1QL supports BETWEEN.
+
 <pre id="example">
-SELECT fname, ARRAY child.fname FOR child IN c.children 
-				END AS children_names 
-  FROM contacts c 
-    WHERE children IS NOT NULL
+SELECT fname, age, age/7 as dog_years, ROUND(age/10)  AS age_in_decades 
+    FROM contacts 
+        WHERE age >= 21
 </pre>

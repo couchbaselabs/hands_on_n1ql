@@ -1,15 +1,15 @@
-## EXERCISE - SOLUTION 1
+# Part 1: Setup, Getting Started and Querying
 
-Find the products with the most reviews. Show
-products with at least 20 reviews.
+## Date operations - what time is it?
 
-This solution unnests the review ids with each product, and then aggregates the review ids on product ID and name.
+JSON does not provide a datetime type, but N1QL comes with rich functionality for working with
+dates and times in both string and number format.
+
+The function NOW_STR() returns the current date and time in ISO-8601 format.
+
+Change NOW_STR to NOW_MILLIS() to get the time in UNIX epoch milliseconds.
 
 <pre id="example">
-SELECT product.name, count(reviewID) AS  numReviews 
-   FROM product UNNEST reviewList AS reviewID 
-     GROUP BY product.productId, product.name 
-       HAVING count(reviewID) >= 20 
-         ORDER BY numReviews desc
+SELECT NOW_STR()
 
 </pre>

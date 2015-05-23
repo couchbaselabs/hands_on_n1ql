@@ -1,15 +1,16 @@
-## EXERCISE - SOLUTION 2
+# Part 1: Setup, Getting Started and Querying
 
-Find the products with the most reviews. Show
-products with at least 20 reviews.
+## Date operations - who bought what when?
 
-This solution uses the ARRAY_LENGTH function to find how many reviews each product has.
+Date functionality can be used to show activity in a time window.
 
-In both solutions, ORDER BY is used to list the results in order of most reviewed.
+Change the query to show active customers between the first date ("2014-02-01") and
+the present time. Is there more than one way to achieve this?
+
 <pre id="example">
-SELECT product.name, ARRAY_LENGTH(reviewList) as numReviews 
-   FROM product 
-     WHERE array_length(reviewList) >= 20 
-        ORDER BY numReviews desc
-
+SELECT p.customerId, p.lineItems, p.purchasedAt 
+  FROM purchases p
+     WHERE STR_TO_MILLIS(p.purchasedAt) 
+           BETWEEN STR_TO_MILLIS("2014-02-01") AND STR_TO_MILLIS("2014-03-01")
+        LIMIT 5
 </pre>

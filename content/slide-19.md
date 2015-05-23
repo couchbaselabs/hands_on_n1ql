@@ -1,25 +1,18 @@
-## EXPLAIN
+# Part 1: Setup, Getting Started and Querying
 
-EXPLAIN can be used to show the plan for a query.
+## Joins
 
-The query on the right shows the average and total revenue for each category.
-Run the query with EXPLAIN to see the query plan. Then, remove the EXPLAIN keyword
-and run the query.
+N1QL supports joining two or more keyspaces in a single query.
 
-Create an index on the purchases bucket:
+To accomplish a join, it is necessary to use a JOIN clause. Documents are joined on their primary keys.
 
-<span style="color: red">
- CREATE INDEX pid1 ON purchases(purchasedAt)
-</span>
+In the samples, the purchases keyspace has a customerId field which is the primary key of the customer that made the purchases.
 
-Then re-run the EXPLAIN and the query itself. Is there a difference in the query plan?
+There is effectively a foreign key - primary key relationship between purchases and customers, which enables us to join them as shown.
+
 <pre id="example">
-`EXPLAIN SELECT cat, SUM(lineItems.count * product.unitPrice) AS revenue,
-    AVG(lineItems.count * product.unitPrice) AS avg_revenue,
-     SUM(lineItems.count) AS units_sold
-FROM purchases UNNEST lineItems
-  JOIN product ON KEYS lineItems.product UNNEST product.categories AS cat
-    WHERE purchases.purchasedAt IS NOT NULL
-            AND SUBSTR(purchases.purchasedAt, 0, 4) = "2013"
-      GROUP BY cat ORDER BY cat desc`
+SELECT p, c
+  FROM purchases p
+        JOIN customer c ON KEYS p.customerId
+    LIMIT 1
 </pre>
