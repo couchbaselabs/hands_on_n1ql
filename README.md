@@ -1,17 +1,19 @@
 
-install_couchbase.sh - script to download and install Ubuntu 14.04 version of Couchbase 
-build.sh - script to create, load and index buckets for hand_on_n1ql
+install_couchbase.sh - download and install Ubuntu 14.04 version of Couchbase 
+
+build.sh - create, load and index buckets for hand_on_n1ql
+
 hands_on_n1ql - Ubuntu 14.04 binary 
 
 ### Instructions:
 
-#### To download and install couchbase 
+#### Download and install couchbase 
 
 $./install_couchbase.sh 3030
 
 Note: install_couchbase.sh requires build number.
 
-#### To create buckets, load buckets, create indexes and run hands_on_n1ql binary
+#### Create buckets, load buckets, create indexes and run hands_on_n1ql binary
 
 $./build.sh
 
@@ -19,16 +21,16 @@ Note: build.sh assumes Couchbase Server admin credentials to be Administrator/pa
 
 To create, load and index buckets in separate steps, proceed as follows:
 
-#### To create buckets 
+#### Create buckets 
 $ ./recreate_buckets.sh password
 
-#### To load buckets 
+#### Load buckets 
 $ ./load_data.sh password
 
-#### To create primary key indexes
+#### Create primary key indexes
 $ ./create_indexes.sh
 
-#### run hands_on_n1ql binary
+#### Run hands_on_n1ql 
 $ ./hands_on_n1ql 
 
 #### open localhost:8000
