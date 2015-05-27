@@ -1,16 +1,13 @@
 # Part 1: Setup, Getting Started and Querying
 
-## Aggregate functions 
+## Combining multiple conditions with AND
 
-Aggregates provide a way to get information about a group of data.
+The AND operator allow us to match documents satisfying two or more conditions.
 
-Try change the query to get an overall customer count.
-
-Then try change the query to show a count of customers in each postal code and state
-(postalCode is the name of the postal code field).
+Change AND to OR - are there more or less results?
 
 <pre id="example">
-SELECT count(customer) as customers_in_state, state
-  FROM customer
-    GROUP BY state
+SELECT fname, email, relation
+    FROM contacts 
+        WHERE relation IN [ "friend", "coworker" ] AND email LIKE '%@gmail.com'
 </pre>

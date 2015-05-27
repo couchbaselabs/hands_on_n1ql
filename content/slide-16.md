@@ -1,14 +1,12 @@
 # Part 1: Setup, Getting Started and Querying
 
-## Filtering grouped data with HAVING 
+## Select DISTINCT 
 
-The HAVING clause enables filtering of groups.
+The DISTINCT keyword can be used to eliminate duplicates from the output.
 
-The query from the previous slide is filtered to include groups with more than 10 members
+Try removing the DISTINCT keyword from the query to see the difference.
 
 <pre id="example">
-SELECT count(customer) as customers_per_state, state
-  FROM customer 
-    GROUP BY state
-      HAVING COUNT(customer) > 10
+SELECT DISTINCT state
+  FROM customer
 </pre>

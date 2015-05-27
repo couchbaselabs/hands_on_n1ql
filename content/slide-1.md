@@ -7,7 +7,7 @@ Welcome to Querying JSON Data with N1QL!
 <b>Session Goals</b>
 
 * Enjoy a gentle introduction to N1QL
-* Focus on features familiar to SQL
+* Focus on features in common with SQL
 * Try it out! 
 
 <pre id="example">

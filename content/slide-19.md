@@ -1,18 +1,15 @@
 # Part 1: Setup, Getting Started and Querying
 
-## Joins
+## Ordering results 
 
-N1QL supports joining two or more keyspaces in a single query.
+Queries can optionally include an ORDER BY clause describing how the results
+should be sorted.
 
-To accomplish a join, it is necessary to use a JOIN clause. Documents are joined on their primary keys.
-
-In the samples, the purchases keyspace has a customerId field which is the primary key of the customer that made the purchases.
-
-There is effectively a foreign key - primary key relationship between purchases and customers, which enables us to join them as shown.
+Modify the query to show the product with lowest price first.
 
 <pre id="example">
-SELECT p, c
-  FROM purchases p
-        JOIN customer c ON KEYS p.customerId
-    LIMIT 1
+SELECT name, description, unitPrice
+  FROM product 
+    ORDER BY unitPrice DESC
+      LIMIT 10
 </pre>

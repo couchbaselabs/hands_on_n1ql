@@ -1,20 +1,15 @@
 # Part 1: Setup, Getting Started and Querying
 
-## EXERCISE - Solution
+## Joins
 
-Find the customers with the most purchases in the states of California, Texas and New York.
+The product keyspace has a list of the primary keys of its reviews.
 
-Present the customer name as a single attribute.
-
-Modify the query to only include purchases made in the 4th quarter of 2013.
+This can be used to join a product with review detail. The query on the right shows a specific product joined with all its review ratings.
 
 <pre id="example">
-SELECT  count(p) as num_purchases, 
-          c.firstName || " " || c.lastName as name
-  FROM purchases p
-        JOIN customer c ON KEYS p.customerId
-    WHERE c.state IN [ "CA", "TX", "NY" ]
-       AND STR_TO_MILLIS(p.purchasedAt) 
-           BETWEEN STR_TO_MILLIS("2013-10-01") AND STR_TO_MILLIS("2014-01-01")
-       GROUP BY c.firstName || " " || c.lastName
+
+SELECT p.name, r.rating
+  FROM product p USE KEYS "product320"
+        JOIN reviews r ON KEYS p.reviewList
+
 </pre>

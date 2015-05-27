@@ -1,12 +1,19 @@
 # Part 1: Setup, Getting Started and Querying
 
-## Select DISTINCT 
+## CASE expressions
 
-The DISTINCT keyword can be used to eliminate duplicates from the output.
+N1QL supports both simple and searched case expressions.
 
-Try removing the DISTINCT keyword from the query to see the difference.
+A searched case expression compares an expression to one or more conditions.
 
 <pre id="example">
-SELECT DISTINCT state
-  FROM customer
+SELECT productId, reviewedAt, rating, 
+    CASE 
+      WHEN rating >= 3.5 THEN "GOOD" 
+      WHEN rating >= 2 THEN "OK" 
+      ELSE "BAD" 
+    END as status 
+  FROM reviews r 
+    LIMIT 1
+
 </pre>

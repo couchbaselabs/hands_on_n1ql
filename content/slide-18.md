@@ -1,15 +1,14 @@
 # Part 1: Setup, Getting Started and Querying
 
-## Querying primary keys
+## Filtering grouped data with HAVING 
 
-Specific primary keys within a bucket can be queried using the USE KEYS clause.
+The HAVING clause enables filtering of groups.
 
-The query on the right fetches documents from the contacts keyspace with the restriction that the primary key must 
-be in the USE KEYS clause.
+The query from the previous slide is filtered to include groups with more than 10 members
 
 <pre id="example">
-SELECT fname, email
-  FROM contacts
-    USE KEYS ["dave", "ian"]
-
+SELECT count(customer) as customers, state
+  FROM customer 
+    GROUP BY state
+      HAVING COUNT(customer) > 10
 </pre>

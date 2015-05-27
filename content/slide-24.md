@@ -2,18 +2,19 @@
 
 ## EXERCISE - Solution
 
-Find the top 5 rated products.
+Find the customers with the most purchases in the states of California, Texas and New York.
 
-Use the product and reviews keyspaces.
+Present the customers first and last name as a single field.
 
-Only include products with more than 10 reviews.
+Modify the query to only include purchases made in the 4th quarter of 2013.
 
-<pre id="example"> 
-SELECT p.name, COUNT(r) as reviewCount,
-   ROUND(AVG(r.rating),1) AS AvgRating
-  FROM product p JOIN reviews r ON KEYS p.reviewList
-    GROUP BY p.name
-     HAVING COUNT(r) > 10
-      ORDER BY AvgRating DESC
-        LIMIT 5
+<pre id="example">
+SELECT  count(p) as num_purchases, 
+          c.firstName || " " || c.lastName as name
+  FROM purchases p
+        JOIN customer c ON KEYS p.customerId
+    WHERE c.state IN [ "CA", "TX", "NY" ]
+       AND STR_TO_MILLIS(p.purchasedAt) 
+           BETWEEN STR_TO_MILLIS("2013-10-01") AND STR_TO_MILLIS("2014-01-01")
+       GROUP BY c.firstName || " " || c.lastName
 </pre>

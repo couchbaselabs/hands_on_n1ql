@@ -2,13 +2,14 @@
 
 ## EXERCISE
 
-Find the top 5 rated products.
+Find the customers with the most purchases in the states of California, Texas and New York.
 
-Use the product and reviews keyspaces.
+Present the customers first and last name as a single field.
 
-Only include products with more than 10 reviews.
+Modify the query to only include purchases made in the 4th quarter of 2013.
 
-<pre id="example"> 
-SELECT p, r
-  FROM product p JOIN reviews r ON KEYS p.reviewList
+<pre id="example">
+SELECT c, p
+  FROM purchases p
+        JOIN customer c ON KEYS p.customerId
 </pre>

@@ -1,7 +1,8 @@
+This repo contains the setup scripts and content for hands on n1ql.
 
 install_couchbase.sh - download and install Centos 7 version of Couchbase 
 
-build.sh - create, load and index buckets for hand_on_n1ql
+build.sh - a script to create, load and index buckets for hand_on_n1ql
 
 hands_on_n1ql - Centos 7 binary 
 

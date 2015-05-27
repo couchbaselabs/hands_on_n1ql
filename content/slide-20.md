@@ -1,15 +1,15 @@
 # Part 1: Setup, Getting Started and Querying
 
-## Joins
+## Querying primary keys
 
-The product keyspace has a list of the primary keys for its reviews.
+Specific primary keys within a bucket can be queried using the USE KEYS clause.
 
-This can be used to join a product with review detail. The query on the right shows a specific product joined with all its reviews.
+The query on the right fetches documents from the contacts keyspace with the restriction that the primary key must 
+be in the USE KEYS clause.
 
 <pre id="example">
-
-SELECT p.name, r.rating
-  FROM product p USE KEYS "product320"
-        JOIN reviews r ON KEYS p.reviewList
+SELECT fname, email
+  FROM contacts
+    USE KEYS ["dave", "ian"]
 
 </pre>

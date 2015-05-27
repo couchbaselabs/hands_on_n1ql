@@ -1,15 +1,16 @@
 # Part 1: Setup, Getting Started and Querying
 
-## Ordering results 
+## Aggregate functions 
 
-Queries can optionally include an ORDER BY clause describing how the results
-should be sorted.
+Aggregates provide a way to get information about a group of data.
 
-Modify the query to show the product with lowest price first.
+Try change the query to get an overall customer count.
+
+Then try change the query to show a count of customers in each postal code and state
+(postalCode is the name of the postal code field).
 
 <pre id="example">
-SELECT name, description, unitPrice
-  FROM product 
-    ORDER BY unitPrice DESC
-      LIMIT 10
+SELECT count(customer) as customers, state
+  FROM customer
+    GROUP BY state
 </pre>

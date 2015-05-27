@@ -2,7 +2,7 @@
 
 ## Date operations - who bought what when?
 
-Date functionality can be used to show activity in a time window.
+The STR_TO_MILLIS() function converts a string in ISO-8601 format to epoch milliseconds.
 
 Change the query to show active customers between the first date ("2014-02-01") and
 the present time. Is there more than one way to achieve this?

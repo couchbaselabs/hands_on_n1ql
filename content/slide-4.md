@@ -4,8 +4,8 @@
 
 Both keyspace names and field names can be aliased.
 
-Aliases are useful in certain contexts, such as joining a keyspace with itself or disambiguating field names. 
-We will meet examples of both shortly.
+Aliases are useful in certain contexts, such as self join or disambiguating field names. 
+We will meet examples of both today.
 
 <pre id="example">
 SELECT c.lname as FamilyName, c.age as Years, 
