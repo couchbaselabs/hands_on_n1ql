@@ -1,15 +1,15 @@
 # Part 2: Querying and Modifying Complex Data
 
-## Subquery
+## Explain
 
-The example on the right uses a subquery to create a sample of the data to analyze; this can be 
-useful when devloping queries on a large dataset or running ad-hoc queries on large datasets 
-without having to build an index.
+Explain shows the execution plan for a query.
 
 <pre id="example"> 
-SELECT p_sample.product.name, 
-        ARRAY_LENGTH(p_sample.product.reviewList) as numReviews
-  FROM (select * from product limit 50) as p_sample
+EXPLAIN 
+ SELECT product.name, 
+        ARRAY_LENGTH(product.reviewList) as numReviews
+  FROM product
     ORDER BY numReviews desc
       LIMIT 5
+
 </pre>

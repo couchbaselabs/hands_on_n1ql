@@ -10,6 +10,6 @@ The function NOW_STR() returns the current date and time in <a href="http://www.
 Change NOW_STR to NOW_MILLIS() to get the time in UNIX epoch milliseconds.
 
 <pre id="example">
-SELECT NOW_STR()
+SELECT NOW_STR() as Now
 
 </pre>
