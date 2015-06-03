@@ -4,8 +4,6 @@ install_couchbase.sh - download and install Centos 7 version of Couchbase
 
 build.sh - a script to create, load and index buckets for hand_on_n1ql
 
-hands_on_n1ql - Centos 7 binary 
-
 ### Instructions:
 
 #### Download and install couchbase 
@@ -31,8 +29,11 @@ $ ./load_data.sh password
 #### Create primary key indexes
 $ ./create_indexes.sh
 
-#### Run hands_on_n1ql 
-$ ./hands_on_n1ql 
+#### Run hands_on_n1ql (mac os). Assumes query engine is on localhost.
+$ ./builds/mac_os/hands_on_n1ql 
+
+#### Run hands_on_n1ql against query engine on a specific host.
+$ ./builds/mac_os/hands_on_n1ql  -queryhost=myqueryhost
 
 #### open localhost:8000
 
