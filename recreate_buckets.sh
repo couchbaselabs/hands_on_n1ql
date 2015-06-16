@@ -1,7 +1,7 @@
 # recreate_buckets.sh
 # This script requires 1 parameter, the Couchbase administrator password
 #
-for b in contacts customer reviews product purchases user_profile
+for b in contacts customer reviews product purchases user_profile customer_profile
 do
     echo "Deleting bucket $b..."
     curl -XDELETE http://127.0.0.1:8091/pools/default/buckets/$b -u Administrator:$1

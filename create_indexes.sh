@@ -1,6 +1,6 @@
 # create_indexes.sh
 
-for b in contacts customer reviews product purchases user_profile
+for b in contacts customer reviews product purchases user_profile customer_profile
 do
 	qry='statement=CREATE PRIMARY INDEX ON '
 	qry+=$b
