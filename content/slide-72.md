@@ -1,5 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
+## Index Hints : USE INDEX
 USE INDEX is a hint to the planner to choose that index when appropriate.
 Only relevant hints are used and others are ignored.
 

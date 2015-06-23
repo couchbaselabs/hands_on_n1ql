@@ -1,6 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
-Partial Index:
+## Partial Index
 
 1. Index only portion of the index based on range expression.
 

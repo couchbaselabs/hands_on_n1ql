@@ -1,4 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
+
+## Performance difference without secondary indexes
 
 Execute this query again to see the performance difference.
 

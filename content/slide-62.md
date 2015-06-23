@@ -1,4 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
+
+## Composite indexes
 
 Create the following index.
 

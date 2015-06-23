@@ -1,5 +1,7 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
+## Multiple where conditions
+ 
 Now, you want only find "Smith" in Vermont.
 
 Now prefix EXPLAIN to this query and execute the following:

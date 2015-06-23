@@ -1,6 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
-
+## Creating an index on a specific attribute
 create in index on lastName;
 
 <pre id="example"> 

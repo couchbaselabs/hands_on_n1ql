@@ -1,5 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
+## Creating the composite key index
 Now, let's create create the composite key index with productId as the leading key.
 
 <pre id="example"> 

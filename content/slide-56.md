@@ -1,5 +1,6 @@
-# Indexing and Query Tuning
-
+# Part 3 : Indexing and Query Tuning
+ 
+## List of Indexes from system catalog
 Let's look at indexes you're already using so far.
 
 Primay indexes have already been created for each key space.

@@ -1,5 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
+## Example : Creating a composite index
 Create a composite index with (ratings and productId)
 
 <pre id="example"> 

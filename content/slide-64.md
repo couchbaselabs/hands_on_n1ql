@@ -1,6 +1,8 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
-Multi-Index Scan: Using multiple indices for flexibility and performance.
+## Multi-Index Scan 
+
+Using multiple indices for flexibility and performance.
 
 This query gets the top 10 rated products
 

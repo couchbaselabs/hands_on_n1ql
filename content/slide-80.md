@@ -1,5 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
+## Meta(): Key scan
 Let's access a document based on the document key.
 
 META(keyspace).id retrieves the document key.

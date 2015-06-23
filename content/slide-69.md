@@ -1,5 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
+## Example
 Execute this query again to see the performance difference.
 
 Now prefix EXPLAIN to this query.

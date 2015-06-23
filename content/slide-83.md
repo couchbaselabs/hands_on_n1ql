@@ -1,19 +1,16 @@
-# Query to invert json hierarchies.
+# Part 4 : Inversion of JSON hierarchies.
 
-Query to invert the JSON hierarchy. The sample data contains
-customer info with multiple orders per customer, having orders 
-that consists of multiple parts.
+## Inverting hierarchies
 
-See the query plan.
+To invert display order for nested data. 
+
+Create a new document where the top attributes contain information present 
+in the nested attributes of the original document. Reverse the order of nested 
+attributes for a given document. The sample data contains customer info with 
+multiple orders per customer, having orders that consists of multiple parts.
 
 <pre id="example">
-from (
-from customer_profile c unnest c.orders o unnest o.parts p
-group by p.part_info, o.order_info
-select p.part_info, o.order_info, array_agg(c.cust_info) as customers
-) s
-group by s.part_info
-select {"part_info": s.part_info, "orders": array_agg({"order_info": s.order_info, "customers": s.customers})} as part
+select * from customer_profile limit 1;
 
 </pre>
 

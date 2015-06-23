@@ -1,5 +1,6 @@
-# Indexing and Query Tuning
+# Part 3 : Indexing and Query Tuning
 
+## Example
 In this query, we're looking for a ratings report on range of products.
 
 Execute this first.
