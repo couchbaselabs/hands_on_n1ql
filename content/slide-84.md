@@ -4,6 +4,7 @@
 
 The query on the right performs the inversion. It uses several N1QL
 features:
+
 * Subquery
 * UNNEST
 * GROUP BY
