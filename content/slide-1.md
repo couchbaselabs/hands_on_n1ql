@@ -1,7 +1,6 @@
-# Part 1: Setup, Getting Started and Querying
+## <b>Part 1: Setup, Getting Started and Querying</b>
 
 
-## Session overview
 Welcome to Querying JSON Data with N1QL!
 
 <b>Session Goals</b>

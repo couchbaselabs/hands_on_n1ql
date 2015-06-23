@@ -1,8 +1,19 @@
 # Part 4 : Inversion of JSON hierarchies.
 
-## Example
+## Performing the inversion
 
-Reverse the order of nested attributes for the given data.
+The query on the right performs the inversion. It uses several N1QL
+features:
++ Subquery
++ UNNEST
++ GROUP BY
++ ARRAY_AGG
++ Dynamic construction of JSON objects
+
+For readibility, the query has been written as FROM - GROUP BY -
+SELECT instead of SELECT - FROM - GROUP BY. Try converting the outer
+or inner query to SELECT - FROM - GROUP BY. As expected, the results
+are the same.
 
 <pre id="example">
 from (

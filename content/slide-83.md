@@ -1,13 +1,20 @@
-# Part 4 : Inversion of JSON hierarchies.
+## <b>Part 4 : Inversion of JSON hierarchies.</b>
 
-## Inverting hierarchies
+This section demonstrates how to invert JSON hierarchies using N1QL.
 
-To invert display order for nested data. 
+Suppose you have JSON documents with the following structure:
++ Each top-level document represents a customer
++ Each customer contains an array of orders
++ Each order contains a part (product)
 
-Create a new document where the top attributes contain information present 
-in the nested attributes of the original document. Reverse the order of nested 
-attributes for a given document. The sample data contains customer info with 
-multiple orders per customer, having orders that consists of multiple parts.
+The exercise is to invert the data while preserving the relationships,
+so that:
++ Each top-level result represents a part
++ Each part contains an array of orders
++ Each order contains a customer
+
+First, let us look at a sample source document. Run the query on the
+right.
 
 <pre id="example">
 select * from customer_profile limit 1;

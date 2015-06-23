@@ -1,6 +1,5 @@
-# Part 2: Querying and Modifying Complex Data
+## <b>Part 2: Querying and Modifying Complex Data</b>
 
-## Session overview
 Welcome to Querying JSON Data with N1QL!
 
 <b>Session Goals</b>

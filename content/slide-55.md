@@ -1,8 +1,8 @@
-# Part 3 : Indexing and Query Tuning
+## <b>Part 3 : Indexing and Query Tuning</b>
 
-## Session Overview
+We now turn our focus to indexing and query tuning.
 
-Let's look at keyspaces you're using so far.
+Let's look at the keyspaces you're using so far.
 
 <pre id="example"> 
 SELECT * 
