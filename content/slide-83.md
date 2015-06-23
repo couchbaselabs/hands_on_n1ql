@@ -1,4 +1,4 @@
-## <b>Part 4 : Inversion of JSON hierarchies.</b>
+## <b>Part 4 : Inversion of JSON hierarchies</b>
 
 This section demonstrates how to invert JSON hierarchies using N1QL.
 
