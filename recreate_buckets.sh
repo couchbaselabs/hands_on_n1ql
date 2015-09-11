@@ -1,6 +1,7 @@
 # recreate_buckets.sh
 # This script requires 1 parameter, the Couchbase administrator password
 #
+port=12200
 for b in contacts customer reviews product purchases user_profile customer_profile
 do
     echo "Deleting bucket $b..."
