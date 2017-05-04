@@ -101,12 +101,9 @@ function run() {
 	var url = '/query';
         var user = 'Administrator';
         var pass = 'password';
-	//var url = 'http://Administrator:password@localhost:8093/query';
 	var ie = ace.edit('iedit');
 	var query = 'statement=' + encodeURIComponent(ie.getValue()) + '&creds=[{"user":"Administrator","pass":"password"}]';
 	$.post(url, query, ran).fail(failed);
-
-
 }
 
 function failed(data) {
